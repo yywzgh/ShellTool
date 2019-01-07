@@ -13,7 +13,7 @@ if [ ! -d "$PHP_ROOT_PATH" ]; then
   echo "$PHP_ROOT_PATH目录不存在!"
   exit 0
 else 
-  echo "请输入项目根路径: $PHP_ROOT_PATH"
+  echo "项目路径: $PHP_ROOT_PATH"
 fi
 
 PHP_ADMIN_PATH=$PHP_ROOT_PATH/app_admin/database.php
@@ -73,7 +73,7 @@ function modify_store_config(){
   echo "》》》修改 $CONFIG_FILE 成功"
 
   cp $PHP_STORE_PATH $PHP_STORE_PATH.$(date +%Y%m%d%M%S)
-
+  #修改database文件
   sed -i "s/^[[:space:]]*'hostname'.*$/$PHP_MYSQL_HOSTNAME/" $PHP_STORE_PATH
   sed -i "s/^[[:space:]]*'database'.*$/$PHP_MYSQL_DB/" $PHP_STORE_PATH
   sed -i "s/^[[:space:]]*'username'.*$/$PHP_MYSQL_USERNAME/" $PHP_STORE_PATH
@@ -102,7 +102,7 @@ function modify_mp_config(){
   echo "》》》修改 $CONFIG_FILE 成功"
   
   cp $PHP_MP_PATH $PHP_MP_PATH.$(date +%Y%m%d%M%S)
-
+  #修改database文件
   sed -i "s/^[[:space:]]*'hostname'.*$/$PHP_MYSQL_HOSTNAME/" $PHP_MP_PATH
   sed -i "s/^[[:space:]]*'database'.*$/$PHP_MYSQL_DB/" $PHP_MP_PATH
   sed -i "s/^[[:space:]]*'username'.*$/$PHP_MYSQL_USERNAME/" $PHP_MP_PATH
