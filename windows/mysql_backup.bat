@@ -18,7 +18,7 @@ for %%i in ("E:\backup\test\%test_file_name%.zip") do (
 )
 
 if %test_backup_size% lss 5120 (
-	curl -H "Content-Type:application/json" -X POST -d "{\"msgtype\": \"text\", \"text\": {\"content\": \"测试环境-数据库备份失败！\"}, \"at\": {\"atMobiles\": [\"19696193138\", \"13971241882\"],\"isAtAll\": false}}" https://oapi.dingtalk.com/robot/send?access_token=0aedf65ec0ef879947afff8d55f92c26e928d9239b07b7a1b08c02f84891a66b
+	curl -H "Content-Type:application/json" -X POST -d "{\"msgtype\": \"text\", \"text\": {\"content\": \"测试环境-数据库备份失败！\"}, \"at\": {\"atMobiles\": [\"1960000\", \"1397000000\"],\"isAtAll\": false}}" https://oapi.dingtalk.com/robot/send?access_token=0aedf6
 )
 
 
